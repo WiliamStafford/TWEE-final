@@ -24,15 +24,18 @@ html {
     height:120px ;
     justify-content: space-between;
     display: flex; 
+    flex-wrap: nowrap;
     
 }
 
 .nav{
     color: none;
+      flex-wrap: nowrap;
 }
 .nav-item{
     margin-left: 5px;
     margin-top: 5px;
+   flex-wrap: nowrap;
 }
 
 .nav-item a{
@@ -43,21 +46,25 @@ html {
     font-weight: 750;
     height: 40px;
     display: inline;
+      flex-wrap: nowrap;
 }
 .nav-item a:hover{
     background-color: #ebf2f3;
     color: #064789 ;
     padding: 10px;
     border-radius:4px;
+      flex-wrap: nowrap;
 }
 .cart-icon {
   position: relative;
   display: inline-block;
+    flex-wrap: nowrap;
 }
 
 .cart-icon i {
   color: #064789;
   font-size: 26px;
+    flex-wrap: nowrap;
 }
 
 .cart-icon .cart-value {
@@ -74,8 +81,8 @@ html {
   text-align: center;
   line-height: 20px;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    flex-wrap: nowrap;
 }
-
 /**--------MENU MOBILE----------**/
 #mobileNav .list-group-item:hover {
     background-color: #b3cfe5 ;   
@@ -105,7 +112,8 @@ html {
         width:380px;
         border-radius: 12px;
         height: 230px;
-        margin-right: 20px;
+        margin-right: 20px;  
+        
     }
 .service-section:hover{
  transform: translateY(-6px) scale(1.02);
@@ -214,8 +222,8 @@ html {
    <div class="logo" style="width: 15%;">
          <img src="anh/anh/logotrongsuot.png" alt="Logo" style="width: 200px;height: 135px;" />
     </div>
-      <div class="menu-page row" style="width: 85%;">
-        <div class="col-8 menu">
+      <div class="menu-page" style="width: 85%;">
+        <div class="menu">
            <ul class="nav">
               <li class="nav-item"><a href="index.html">TRANG CHỦ</a></li>
               <li class="nav-item"><a href="ChuyenNhaTwee.html">CHUYỆN NHÀ TWEE</a></li>
@@ -224,7 +232,7 @@ html {
               <li class="nav-item"><a href="DichVu.html">DỊCH VỤ</a> </li>
            </ul>
         </div>
-        <div class="col-4 contact menu">
+        <div class="contact menu">
            <ul class="nav justify-content-end">
             <li class="nav-item">
               <a href="#" class="nav-link cart-icon position-relative">

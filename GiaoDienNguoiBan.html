@@ -17,51 +17,94 @@
             --warning: #ffc107;
             --danger: #dc3545;
         }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg); }
+        body { 
+        font-family: 'Poppins', sans-serif;
+         background: var(--bg); }
         .sidebar {
-            position: fixed; top: 0; left: 0; height: 100%; width: 280px;
-            background: var(--primary); color: white; padding-top: 20px; z-index: 1000;
-            transition: all 0.3s; overflow-y: auto;
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            height: 100%; 
+            width: 280px;
+            background: var(--primary);
+            color: white; 
+            padding-top: 20px;
+            z-index: 1000;
+            transition: all 0.3s; 
+            overflow-y: auto;
         }
         .sidebar .logo img { height: 70px; }
         .sidebar .nav-link {
-            color: rgba(255,255,255,0.9); padding: 14px 25px; border-radius: 0;
-            transition: all 0.3s; font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            padding: 14px 25px;
+            border-radius: 0;
+            transition: all 0.3s; 
+            font-weight: 500;
         }
         .sidebar .nav-link:hover, .sidebar .nav-link.active {
-            background: rgba(255,255,255,0.2); color: white; padding-left: 35px;
+            background: rgba(255,255,255,0.2); 
+            color: white; 
+            padding-left: 35px;
         }
-        .main-content { margin-left: 280px; padding: 25px; }
+        .main-content { 
+            margin-left: 280px;
+            padding: 25px; }
         .topbar {
-            background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;
+            background: white; 
+            padding: 20px;
+             border-radius: 15px; 
+             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
         }
         .stats-card {
-            background: white; border-radius: 16px; padding: 25px; text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: 0.3s;
+            background: white;
+             border-radius: 16px; 
+             padding: 25px; 
+             text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            transition: 0.3s;
         }
         .stats-card:hover { transform: translateY(-10px); }
-        .stats-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 15px; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        .stats-card i { 
+            font-size: 2.8rem;
+             color: var(--primary);
+              margin-bottom: 15px; }
+        .tab-content {
+             display: none;
+             }
+        .tab-content.active {
+             display: block; 
+            }
         .product-img-preview {
-            width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin: 5px;
+            width: 80px;
+             height: 80px;
+              object-fit: cover;
+               border-radius: 8px;
+                margin: 5px;
         }
         @media (max-width: 992px) {
             .sidebar { width: 80px; }
             .sidebar .logo img { height: 50px; }
             .sidebar .nav-link span { display: none; }
-            .sidebar .nav-link:hover span { display: block; position: absolute; left: 80px; background: var(--primary); padding: 10px 15px; border-radius: 8px; white-space: nowrap; }
+            .sidebar .nav-link:hover span { display: block;
+                 position: absolute; 
+                 left: 80px; 
+                 background: var(--primary);
+                  padding: 10px 15px; 
+                  border-radius: 8px; 
+                  white-space: nowrap; }
             .main-content { margin-left: 80px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Sidebar -->
 <div class="sidebar">
     <div class="text-center logo mb-4">
-        <img src="anh/anh/logotrongsuot.png" alt="TWEE">
+        <div style="font-size: 30px; color: white; font-weight: bold;">TWEE</div>
         <h5 class="mt-2 text-white">QUẢN TRỊ VIÊN</h5>
     </div>
     <ul class="nav flex-column">
@@ -73,24 +116,24 @@
     </ul>
 </div>
 
-<!-- Main Content -->
 <div class="main-content">
 
-    <!-- Top Bar -->
     <div class="topbar">
         <h3><i class="fas fa-crown text-warning"></i> Chào mừng trở lại, Chủ shop TWEE!</h3>
         <div>
-            <span class="me-4">Hôm nay: <strong>20/11/2025</strong></span>
-            <button class="btn btn-outline-danger btn-sm"><a  class="text-danger" href="index.html"><i class="fas fa-power-off"></i> Đăng xuất</a></button>
+            <span class="me-4">Hôm nay: <strong id="currentDate"></strong></span>
+            <a href="index.html" class="btn btn-outline-danger btn-sm">
+                <i class="fas fa-power-off"></i>
+                 Đăng xuất
+            </a>
         </div>
     </div>
-
-    <!-- Dashboard -->
+<!---------Tổng quan-->
     <div id="dashboard" class="tab-content active">
         <div class="row mb-4">
-            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-shopping-bag"></i><h4>68</h4><p>Đơn hàng hôm nay</p></div></div>
-            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-coins"></i><h4>42.8 triệu</h4><p>Doanh thu tháng 11</p></div></div>
-            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-box-open"></i><h4>128</h4><p>Sản phẩm đang bán</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-shopping-bag"></i><h4 id="dash-order-count">0</h4><p>Đơn hàng</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-coins"></i><h4 id="dash-revenue">0đ</h4><p>Tổng Doanh thu</p></div></div>
+            <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-box-open"></i><h4>13</h4><p>Sản phẩm đang bán</p></div></div>
             <div class="col-lg-3 col-md-6"><div class="stats-card"><i class="fas fa-users"></i><h4>1,248</h4><p>Khách hàng mới</p></div></div>
         </div>
         <div class="card shadow">
@@ -99,57 +142,46 @@
             </div>
         </div>
     </div>
-
-    <!-- Đơn hàng -->
+<!-----------ĐƠN HÀNG--------->
     <div id="orders" class="tab-content">
-        <h4 class="mb-4"><i class="fas fa-truck"></i> Đơn hàng mới nhất</h4>
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>Mã đơn</th><th>Khách hàng</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Trạng thái</th><th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#DH1248</td>
-                        <td>Lan Anh</td>
-                        <td>Áo dài hoa cúc + Set vest bé trai</td>
-                        <td><strong class="text-danger">1.089.000đ</strong></td>
-                        <td><span class="badge bg-warning">Đang xử lý</span></td>
-                        <td>
-                            <label>
-                                <select class="form-select form-select-sm w-auto d-inline">
-                                    <option>Đang xử lý</option>
-                                    <option>Đã xác nhận</option>
-                                    <option>Đang giao</option>
-                                    <option>Hoàn thành</option>
-                                </select>
-                            </label>
-                            <button class="btn btn-sm btn-success ms-2"><i class="fas fa-check"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <h4 class="mb-4"><i class="fas fa-truck"></i> Quản lý Đơn hàng</h4>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tbody id="orderTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Quản lý sản phẩm -->
+<!------------SẢN PHẨM------------->
     <div id="products" class="tab-content">
         <h4 class="mb-4"><i class="fas fa-box"></i> Danh sách sản phẩm</h4>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="table-light">
-                    <tr>
-                        <th>Hình ảnh</th><th>Tên sản phẩm</th><th>Giá</th><th>Danh mục</th><th>Tồn kho</th><th>Hành động</th>
-                    </tr>
+                <tr>
+                    <th>Hình ảnh</th><th>Tên sản phẩm</th><th>Giá</th><th>Danh mục</th><th>Tồn kho</th><th>Hành động</th>
+                </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td><img src="anh/spnb/sp1.jpg" class="product-img-preview" alt=""></td>
-                    <td>Áo dài gấm hoa cúc</td>
-                    <td>339.000đ</td>
-                    <td>Áo dài truyền thống</td>
+                    <td>Áo khoác da cá tính phối váy ren điệu đà</td>
+                    <td>361.000đ</td>
+                    <td>Áo khoác da cá tính phối váy ren điệu đà</td>
                     <td>15</td>
                     <td>
                         <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
@@ -157,12 +189,11 @@
                     </td>
                 </tr>
 
-                <!-- sp2  sp 2-->
                 <tr>
                     <td><img src="anh/spnb/sp2.jpg" class="product-img-preview" alt=""></td>
-                    <td>Áo Dài Bé Gái Cách Tân CHICKBONG T10</td>
-                    <td>287.000đ</td>
-                    <td>Áo dài truyền thống</td>
+                    <td>Áo khoác blazer không cổ phối quần baggy sành điệu</td>
+                    <td>450.000đ</td>
+                    <td>Áo khoác blazer không cổ phối quần baggy sành điệu</td>
                     <td>42</td>
                     <td>
                         <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
@@ -170,12 +201,11 @@
                     </td>
                 </tr>
 
-                <!-- sp3  sp 3-->
                 <tr>
                     <td><img src="anh/spnb/sp3.jpg" class="product-img-preview" alt=""></td>
-                    <td>Set Đồ Tết Áo Dài Cách Tân Quần Dài Thiên Long Cho Bé Trai 1-7 Tuổi MINTSCLOSET - TD4463</td>
-                    <td>361.000đ</td>
-                    <td>Áo dài cách tân</td>
+                    <td>Set váy và phụ kiện cho bé gái cá tính</td>
+                    <td>389.000đ</td>
+                    <td>Set váy và phụ kiện cho bé gái cá tính</td>
                     <td>8</td>
                     <td>
                         <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
@@ -183,10 +213,9 @@
                     </td>
                 </tr>
 
-                <!-- sp4  sp 4-->
                 <tr>
                     <td><img src="anh/spnb/sp4.jpg" class="product-img-preview" alt=""></td>
-                    <td> Bộ vest bé trai (ÁO VEST + QUẦN) hàn quốc S96 size 100-160, bộ blazer trẻ em cao cấp</td>
+                    <td> Bộ trang phục năng động và thời trang cho bé trai</td>
                     <td>750.000đ</td>
                     <td>Vest / Blazer bé trai</td>
                     <td>5</td>
@@ -196,7 +225,6 @@
                     </td>
                 </tr>
 
-                <!-- sp5  product 1-->
                 <tr>
                     <td><img src="anh/sp/setxanh.jpg" id="mainImage" class="product-img-preview" alt="Set Tim Xanh cho Bé"></td>
                     <td> Set Tim Xanh cho Bé mặc đi chơi tặng kèm nơ từ 3kg đến 10kg</td>
@@ -209,7 +237,6 @@
                     </td>
                 </tr>
 
-                <!-- sp6  product 2-->
                 <tr>
                     <td><img src="anh/sp/nguhong.jpg" class="product-img-preview" alt="Set đồ Twee hoa hồng nhỏ"></td>
                     <td> Set đồ Twee hoa hồng nhỏ mặc đi chơi tặng kèm nơ từ 3kg đến 10kg</td>
@@ -222,7 +249,6 @@
                     </td>
                 </tr>
 
-                <!-- sp7  product 3-->
                 <tr>
                     <td><img src="anh/sp/setdo.jpg" class="product-img-preview" alt="Set bé Cherry ngọt ngào"></td>
                     <td>Set bé Cherry ngọt ngào mặc đi chơi, thoải mái, dễ dàng vận động từ 4kg đến 16kg</td>
@@ -235,7 +261,6 @@
                     </td>
                 </tr>
 
-                <!-- sp8  product 4-->
                 <tr>
                     <td><img src="anh/sp/setnam.jpg" class="product-img-preview" alt="Set đồ dạo phố thoáng mát cho bé"></td>
                     <td>Set đồ dạo phố thoáng mát cho bé mặc đi chơi từ 10kg đến 18kg</td>
@@ -248,7 +273,6 @@
                     </td>
                 </tr>
 
-                <!-- sp9  product 5-->
                 <tr>
                     <td><img src="anh/sp/dobo.jpg" class="product-img-preview" alt="Set đồ ngủ cổ sen ngọt ngào"></td>
                     <td> Set đồ ngủ cổ sen ngọt ngào cho bé từ 3kg đến 10kg</td>
@@ -261,7 +285,6 @@
                     </td>
                 </tr>
 
-                <!-- sp10  product 6-->
                 <tr>
                     <td><img src="anh/sp/yemtho.jpg" class="product-img-preview" alt="Yếm Thỏ hồng hoa nhí dễ thương"></td>
                     <td> Yếm Thỏ hồng hoa nhí dễ thương cho bé từ 3kg đến 10kg</td>
@@ -274,7 +297,6 @@
                     </td>
                 </tr>
 
-                <!-- sp11  product 7-->
                 <tr>
                     <td><img src="anh/sp/vet.jpg" class="product-img-preview" alt="Set quý ông nhỏ dành cho bé nam"></td>
                     <td> Set quý ông nhỏ dành cho bé nam, sang trọng, hiện đại từ 3kg đến 10kg</td>
@@ -287,7 +309,6 @@
                     </td>
                 </tr>
 
-                <!-- sp12  product 8-->
                 <tr>
                     <td><img src="anh/sp/dichoi.jpg" class="product-img-preview" alt="Set Thu Đông Búp Bê dễ thương"></td>
                     <td>Set Thu Đông Búp Bê dễ thương cho bé gái từ 3kg đến 10kg</td>
@@ -300,7 +321,6 @@
                     </td>
                 </tr>
 
-                <!-- sp13  product 9-->
                 <tr>
                     <td><img src="anh/sp/aokhoac.jpg" class="product-img-preview" alt="Áo khoác mùa đông cho bé"></td>
                     <td>Áo khoác mùa đông cho bé, ấm áp, nhẹ nhàng từ 3kg đến 10kg</td>
@@ -316,8 +336,7 @@
             </table>
         </div>
     </div>
-
-    <!-- Thêm sản phẩm -->
+<!--------------THÊM SẢN PHẨM------------------>
     <div id="add-product" class="tab-content">
         <h4 class="mb-4"><i class="fas fa-plus-circle"></i> Thêm sản phẩm mới</h4>
         <div class="card shadow">
@@ -422,8 +441,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Doanh thu -->
+<!---------------DOANH THU--------------------->
     <div id="revenue" class="tab-content">
         <h4 class="mb-4"><i class="fas fa-chart-bar"></i> Báo cáo doanh thu</h4>
         <div class="card shadow">
@@ -432,8 +450,9 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<!----------PHẦN CẬP SẢN PHẨM KHI THÊM------------>
 <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -446,12 +465,10 @@
                     <div class="text-center mb-3">
                         <img id="modalImgPreview" src="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px;" alt="">
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Tên sản phẩm</label>
                         <label for="modalProductName"></label><input type="text" class="form-control" id="modalProductName">
                     </div>
-
                     <div class="row">
                         <div class="col-6 mb-3">
                             <label class="form-label">Giá tiền</label>
@@ -462,20 +479,19 @@
                             <label for="modalProductStock"></label><input type="number" class="form-control" id="modalProductStock">
                         </div>
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Danh mục</label>
                         <label for="modalProductCategory"></label><select class="form-select" id="modalProductCategory">
-                            <option value="Áo dài truyền thống">Áo dài truyền thống</option>
-                            <option value="Áo dài cách tân">Áo dài cách tân</option>
-                            <option value="Vest / Blazer bé trai">Vest / Blazer bé trai</option>
-                            <option value="Set bộ bé gái">Set bộ bé gái</option>
-                            <option value="Set bộ bé trai">Set bộ bé trai</option>
-                            <option value="Đồ ngủ trẻ em">Đồ ngủ trẻ em</option>
-                            <option value="Váy / Yếm bé gái">Váy / Yếm bé gái</option>
-                            <option value="Thời trang Thu Đông">Thời trang Thu Đông</option>
-                            <option value="Áo khoác trẻ em">Áo khoác trẻ em</option>
-                        </select>
+                        <option value="Áo dài truyền thống">Áo dài truyền thống</option>
+                        <option value="Áo dài cách tân">Áo dài cách tân</option>
+                        <option value="Vest / Blazer bé trai">Vest / Blazer bé trai</option>
+                        <option value="Set bộ bé gái">Set bộ bé gái</option>
+                        <option value="Set bộ bé trai">Set bộ bé trai</option>
+                        <option value="Đồ ngủ trẻ em">Đồ ngủ trẻ em</option>
+                        <option value="Váy / Yếm bé gái">Váy / Yếm bé gái</option>
+                        <option value="Thời trang Thu Đông">Thời trang Thu Đông</option>
+                        <option value="Áo khoác trẻ em">Áo khoác trẻ em</option>
+                    </select>
                     </div>
                 </form>
             </div>
@@ -486,9 +502,10 @@
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // 1. Tab switching (Chuyển tab)
+    document.getElementById('currentDate').innerText = new Date().toLocaleDateString('vi-VN');
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -499,66 +516,152 @@
         });
     });
 
-    // 2. Biểu đồ doanh thu
-    const ctx = document.getElementById('revenueChart');
-    if(ctx) {
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Tuần 1', 'Tuần 2', 'Tuần 3', 'Tuần 4'],
-                datasets: [{
-                    label: 'Doanh thu tháng 11 (triệu đồng)',
-                    data: [28, 35, 42, 48],
-                    borderColor: '#064789',
-                    backgroundColor: 'rgba(6, 71, 137, 0.1)',
-                    tension: 0.4,
-                    fill: true
-                }]
-            },
-            options: { responsive: true }
-        });
+    // format
+    function formatCurrency(amount) {
+        return parseInt(amount).toLocaleString('vi-VN') + 'đ';
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        let currentRowForEdit = null;
 
+    function loadDashboardData() {
+        const orders = JSON.parse(localStorage.getItem('tweeOrders')) || [];
+        let totalRevenue = 0;
+        orders.forEach(order => {
+            let priceRaw = order.total.toString().replace(/[^0-9]/g, '');
+            totalRevenue += parseFloat(priceRaw);
+        });
+        const countEl = document.getElementById('dash-order-count');
+        const revEl = document.getElementById('dash-revenue');
+        if(countEl) countEl.innerText = orders.length;
+        if(revEl) revEl.innerText = formatCurrency(totalRevenue);
+
+
+        const orderTableBody = document.getElementById('orderTableBody');
+        if(orderTableBody) {
+            if (orders.length === 0) {
+                orderTableBody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">Chưa có đơn hàng nào!</td></tr>';
+            } else {
+                let html = '';
+                const displayOrders = orders.map((order, index) => ({...order, originalIndex: index})).reverse();
+                displayOrders.forEach((order) => {
+                    let productNames = order.items.map(item => `${item.name} <small class="text-muted">(x${item.quantity})</small>`).join('<br>');
+                    const isCompleted = order.status === 'Hoàn thành';
+                    const disabledAttr = isCompleted ? 'disabled' : '';
+                    const selectClass = isCompleted ? 'form-select form-select-sm w-auto d-inline mb-1 locked-select' : 'form-select form-select-sm w-auto d-inline mb-1';
+                    const rowClass = isCompleted ? 'completed-row' : '';
+
+                    html += `
+                        <tr class="${rowClass}">
+                            <td><strong>${order.id}</strong></td>
+                            <td>
+                                <b>${order.customer.name}</b><br>
+                                <small class="text-muted">${order.customer.phone}</small>
+                            </td>
+                            <td>${productNames}</td>
+                            <td><strong class="text-danger">${order.total}</strong></td>
+                            <td>
+                                ${isCompleted ? '<span class="badge bg-success">Hoàn thành</span>' : `<span class="badge bg-warning text-dark">${order.status || 'Chờ xử lý'}</span>`}
+                            </td>
+                            <td>
+                                <select ${disabledAttr} class="${selectClass}" onchange="updateStatus(${order.originalIndex}, this.value)">
+                                    <option ${order.status === 'Chờ xử lý' ? 'selected' : ''}>Chờ xử lý</option>
+                                    <option ${order.status === 'Đã xác nhận' ? 'selected' : ''}>Đã xác nhận</option>
+                                    <option ${order.status === 'Đang giao' ? 'selected' : ''}>Đang giao</option>
+                                    <option ${order.status === 'Hoàn thành' ? 'selected' : ''}>Hoàn thành</option>
+                                </select>
+                                <button class="btn btn-sm btn-danger ms-1" ${disabledAttr} onclick="deleteOrder('${order.id}')"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    `;
+                });
+                orderTableBody.innerHTML = html;
+            }
+        }
+    }
+
+    window.updateStatus = function(originalIndex, newStatus) {
+        const orders = JSON.parse(localStorage.getItem('tweeOrders')) || [];
+        const currentOrder = orders[originalIndex];
+        if (currentOrder.status === 'Hoàn thành') {
+            alert("Đơn hàng này đã hoàn thành, không thể thay đổi!");
+            loadDashboardData();
+            return;
+        }
+
+        if (newStatus === 'Hoàn thành') {
+            if(!confirm("  CẢNH BÁO:\n\nKhi chuyển sang 'Hoàn thành', đơn hàng sẽ bị KHÓA CỨNG.\nBạn chắc chắn chứ?")) {
+                loadDashboardData();
+                return;
+            }
+        }
+
+        orders[originalIndex].status = newStatus;
+        localStorage.setItem('tweeOrders', JSON.stringify(orders));
+        loadDashboardData();
+
+        if (newStatus !== 'Hoàn thành') alert("Cập nhật thành công!");
+    }
+
+    window.deleteOrder = function(orderId) {
+        if(confirm("Xóa vĩnh viễn đơn hàng " + orderId + "?")) {
+            let orders = JSON.parse(localStorage.getItem('tweeOrders')) || [];
+            orders = orders.filter(order => order.id !== orderId);
+            localStorage.setItem('tweeOrders', JSON.stringify(orders));
+            loadDashboardData();
+        }
+    }
+
+    // 7. CHART
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDashboardData();
+        const ctx = document.getElementById('revenueChart');
+        if(ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Tuần 1', 'Tuần 2', 'Tuần 3', 'Tuần 4'],
+                    datasets: [{
+                        label: 'Doanh thu tháng 11 (triệu đồng)',
+                        data: [28, 35, 42, 48],
+                        borderColor: '#064789',
+                        backgroundColor: 'rgba(6, 71, 137, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: { responsive: true }
+            });
+        }
+
+        let currentRowForEdit = null;
         const modalElement = document.getElementById('editModal');
         let editModalObject;
         if (modalElement) {
             editModalObject = new bootstrap.Modal(modalElement);
         }
+
         const priceInput = document.getElementById('modalProductPrice');
         if (priceInput) {
             priceInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/[^0-9]/g, '');
-                if (!value) {
-                    e.target.value = '';
-                    return;
-                }
+                if (!value) { e.target.value = ''; return; }
                 e.target.value = parseInt(value).toLocaleString('vi-VN');
             });
-
             priceInput.addEventListener('focus', function(e) {
                 let value = e.target.value;
-                if (value.includes('đ')) {
-                    e.target.value = value.replace('đ', '').trim();
-                }
+                if (value.includes('đ')) e.target.value = value.replace('đ', '').trim();
             });
             priceInput.addEventListener('blur', function(e) {
                 let value = e.target.value;
-                if (value && !value.includes('đ')) {
-                    e.target.value = value + 'đ';
-                }
+                if (value && !value.includes('đ')) e.target.value = value + 'đ';
             });
         }
+
         const productTable = document.querySelector('#products tbody');
         if (productTable) {
             productTable.addEventListener('click', function(e) {
                 if (e.target.closest('.btn-warning')) {
                     e.preventDefault();
-
                     const btn = e.target.closest('.btn-warning');
                     currentRowForEdit = btn.closest('tr');
-
                     const cells = currentRowForEdit.querySelectorAll('td');
                     if (cells.length > 4) {
                         const imgUrl = cells[0].querySelector('img').src;
@@ -573,9 +676,7 @@
                         document.getElementById('modalProductCategory').value = category;
                         document.getElementById('modalProductStock').value = stock;
 
-                        if (editModalObject) {
-                            editModalObject.show();
-                        }
+                        if (editModalObject) editModalObject.show();
                     }
                 }
             });
@@ -583,7 +684,6 @@
             console.error("Không tìm thấy bảng sản phẩm!");
         }
 
-        //add event Listener cho edit btn
         const btnSave = document.getElementById('btnConfirmEdit');
         if (btnSave) {
             btnSave.addEventListener('click', function() {
@@ -607,19 +707,17 @@
                     cells[2].innerText = formattedPriceForTable;
                     cells[3].innerText = newCategory;
                     cells[4].innerText = newStock;
+                    const modalEl = document.getElementById('editModal');
+                    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                    if (modalInstance) modalInstance.hide();
 
-                    editModalObject.hide();
                     currentRowForEdit = null;
                 }
             });
         }
-    });
 
-    // add evenListener cho delete button
-    document.addEventListener('DOMContentLoaded', function() {
-
-        const deleteBtn = document.querySelectorAll('.btn-danger');
-
+        // add even Listener delete btn
+        const deleteBtn = document.querySelectorAll('#products .btn-danger');
         deleteBtn.forEach(deleteBtn => {
             deleteBtn.addEventListener('click', function(e){
                 e.preventDefault();
@@ -629,7 +727,7 @@
                 }
             })
         })
-    })
+    });
 </script>
 </body>
 </html>

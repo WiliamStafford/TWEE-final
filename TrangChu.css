@@ -1,6 +1,7 @@
 *{
  margin: 0px;
  padding: 0px;
+ 
 }
 html {
   scroll-behavior: smooth; /* chuyển động mượt khi cuộn */
@@ -12,15 +13,18 @@ html {
     height:120px ;
     justify-content: space-between;
     display: flex; 
+    flex-wrap: nowrap;
     
 }
 
 .nav{
     color: none;
+      flex-wrap: nowrap;
 }
 .nav-item{
     margin-left: 5px;
     margin-top: 5px;
+   flex-wrap: nowrap;
 }
 
 .nav-item a{
@@ -31,21 +35,25 @@ html {
     font-weight: 750;
     height: 40px;
     display: inline;
+      flex-wrap: nowrap;
 }
 .nav-item a:hover{
     background-color: #ebf2f3;
     color: #064789 ;
     padding: 10px;
     border-radius:4px;
+      flex-wrap: nowrap;
 }
 .cart-icon {
   position: relative;
   display: inline-block;
+    flex-wrap: nowrap;
 }
 
 .cart-icon i {
   color: #064789;
   font-size: 26px;
+    flex-wrap: nowrap;
 }
 
 .cart-icon .cart-value {
@@ -62,6 +70,7 @@ html {
   text-align: center;
   line-height: 20px;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    flex-wrap: nowrap;
 }
 /**------Menu Mobile------*/
 #mobileNav .list-group-item:hover {
@@ -134,7 +143,8 @@ html {
         .img-wrapper img {
             transition: opacity 0.3s, transform 0.3s; /* Thêm transform cho hiệu ứng phóng to */
             width: 100%; 
-            height: auto;
+            height: 400px;
+            object-fit: cover
         }
         .product-card:hover .img-wrapper img {
             opacity: 0.6; 
@@ -312,10 +322,7 @@ html {
 
 /* Làm banner và các section đẹp hơn trên mobile */
 @media (max-width: 767.98px) {
-  .carousel-item img {
-    height: 50vh !important;
-    object-fit: cover;
-  }
+
   .section-row {
     flex-direction: column;
     padding: 10px !important;
